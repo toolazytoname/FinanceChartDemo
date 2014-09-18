@@ -1,0 +1,561 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		44100C2819CAD95B008B50FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44100C2719CAD95B008B50FD /* Foundation.framework */; };
+		44100C2A19CAD95B008B50FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44100C2919CAD95B008B50FD /* CoreGraphics.framework */; };
+		44100C2C19CAD95B008B50FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44100C2B19CAD95B008B50FD /* UIKit.framework */; };
+		44100C3219CAD95B008B50FD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 44100C3019CAD95B008B50FD /* InfoPlist.strings */; };
+		44100C3419CAD95B008B50FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44100C3319CAD95B008B50FD /* main.m */; };
+		44100C3819CAD95B008B50FD /* SPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44100C3719CAD95B008B50FD /* SPAppDelegate.m */; };
+		44100C3A19CAD95B008B50FD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44100C3919CAD95B008B50FD /* Images.xcassets */; };
+		44100C4119CAD95B008B50FD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44100C4019CAD95B008B50FD /* XCTest.framework */; };
+		44100C4219CAD95B008B50FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44100C2719CAD95B008B50FD /* Foundation.framework */; };
+		44100C4319CAD95B008B50FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44100C2B19CAD95B008B50FD /* UIKit.framework */; };
+		44100C4B19CAD95B008B50FD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 44100C4919CAD95B008B50FD /* InfoPlist.strings */; };
+		44100C4D19CAD95B008B50FD /* ChartDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44100C4C19CAD95B008B50FD /* ChartDemoTests.m */; };
+		44100C5D19CAD99B008B50FD /* FinanceDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44100C5819CAD99B008B50FD /* FinanceDemoViewController.m */; };
+		44100C5E19CAD99B008B50FD /* FinanceDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44100C5919CAD99B008B50FD /* FinanceDemoViewController.xib */; };
+		44100C5F19CAD99B008B50FD /* FinanceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44100C5B19CAD99B008B50FD /* FinanceTableViewController.m */; };
+		44100C6019CAD99B008B50FD /* FinanceTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44100C5C19CAD99B008B50FD /* FinanceTableViewController.xib */; };
+		44100C6819CADA03008B50FD /* BezierLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44100C6519CADA03008B50FD /* BezierLineChartView.m */; };
+		44100C6919CADA03008B50FD /* lineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44100C6719CADA03008B50FD /* lineModel.m */; };
+		44100C6C19CADA1C008B50FD /* PieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44100C6B19CADA1C008B50FD /* PieChartView.m */; };
+		44100C7219CADA3B008B50FD /* NumberJumpTextLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44100C6F19CADA3B008B50FD /* NumberJumpTextLayer.m */; };
+		44100C7319CADA3B008B50FD /* NJDBezierCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = 44100C7119CADA3B008B50FD /* NJDBezierCurve.m */; };
+		44100C7719CADACF008B50FD /* NSArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 44100C7619CADACF008B50FD /* NSArray+Safe.m */; };
+		44100C7A19CADAE4008B50FD /* ColorTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 44100C7919CADAE4008B50FD /* ColorTool.m */; };
+		44100C7D19CADAF8008B50FD /* UIView-ViewFrameGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 44100C7C19CADAF8008B50FD /* UIView-ViewFrameGeometry.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		44100C4419CAD95B008B50FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44100C1C19CAD95B008B50FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44100C2319CAD95B008B50FD;
+			remoteInfo = ChartDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		44100C2419CAD95B008B50FD /* ChartDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChartDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		44100C2719CAD95B008B50FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		44100C2919CAD95B008B50FD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		44100C2B19CAD95B008B50FD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		44100C2F19CAD95B008B50FD /* ChartDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChartDemo-Info.plist"; sourceTree = "<group>"; };
+		44100C3119CAD95B008B50FD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		44100C3319CAD95B008B50FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		44100C3519CAD95B008B50FD /* ChartDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChartDemo-Prefix.pch"; sourceTree = "<group>"; };
+		44100C3619CAD95B008B50FD /* SPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPAppDelegate.h; sourceTree = "<group>"; };
+		44100C3719CAD95B008B50FD /* SPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPAppDelegate.m; sourceTree = "<group>"; };
+		44100C3919CAD95B008B50FD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		44100C3F19CAD95B008B50FD /* ChartDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChartDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		44100C4019CAD95B008B50FD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		44100C4819CAD95B008B50FD /* ChartDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChartDemoTests-Info.plist"; sourceTree = "<group>"; };
+		44100C4A19CAD95B008B50FD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		44100C4C19CAD95B008B50FD /* ChartDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChartDemoTests.m; sourceTree = "<group>"; };
+		44100C5719CAD99B008B50FD /* FinanceDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanceDemoViewController.h; sourceTree = "<group>"; };
+		44100C5819CAD99B008B50FD /* FinanceDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceDemoViewController.m; sourceTree = "<group>"; };
+		44100C5919CAD99B008B50FD /* FinanceDemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinanceDemoViewController.xib; sourceTree = "<group>"; };
+		44100C5A19CAD99B008B50FD /* FinanceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanceTableViewController.h; sourceTree = "<group>"; };
+		44100C5B19CAD99B008B50FD /* FinanceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceTableViewController.m; sourceTree = "<group>"; };
+		44100C5C19CAD99B008B50FD /* FinanceTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinanceTableViewController.xib; sourceTree = "<group>"; };
+		44100C6419CADA03008B50FD /* BezierLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierLineChartView.h; sourceTree = "<group>"; };
+		44100C6519CADA03008B50FD /* BezierLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierLineChartView.m; sourceTree = "<group>"; };
+		44100C6619CADA03008B50FD /* lineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lineModel.h; sourceTree = "<group>"; };
+		44100C6719CADA03008B50FD /* lineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lineModel.m; sourceTree = "<group>"; };
+		44100C6A19CADA1C008B50FD /* PieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartView.h; sourceTree = "<group>"; };
+		44100C6B19CADA1C008B50FD /* PieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartView.m; sourceTree = "<group>"; };
+		44100C6E19CADA3B008B50FD /* NumberJumpTextLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberJumpTextLayer.h; sourceTree = "<group>"; };
+		44100C6F19CADA3B008B50FD /* NumberJumpTextLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberJumpTextLayer.m; sourceTree = "<group>"; };
+		44100C7019CADA3B008B50FD /* NJDBezierCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDBezierCurve.h; sourceTree = "<group>"; };
+		44100C7119CADA3B008B50FD /* NJDBezierCurve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDBezierCurve.m; sourceTree = "<group>"; };
+		44100C7519CADACF008B50FD /* NSArray+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Safe.h"; sourceTree = "<group>"; };
+		44100C7619CADACF008B50FD /* NSArray+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Safe.m"; sourceTree = "<group>"; };
+		44100C7819CADAE4008B50FD /* ColorTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorTool.h; sourceTree = "<group>"; };
+		44100C7919CADAE4008B50FD /* ColorTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorTool.m; sourceTree = "<group>"; };
+		44100C7B19CADAF8008B50FD /* UIView-ViewFrameGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView-ViewFrameGeometry.h"; sourceTree = "<group>"; };
+		44100C7C19CADAF8008B50FD /* UIView-ViewFrameGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView-ViewFrameGeometry.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		44100C2119CAD95B008B50FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44100C2A19CAD95B008B50FD /* CoreGraphics.framework in Frameworks */,
+				44100C2C19CAD95B008B50FD /* UIKit.framework in Frameworks */,
+				44100C2819CAD95B008B50FD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44100C3C19CAD95B008B50FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44100C4119CAD95B008B50FD /* XCTest.framework in Frameworks */,
+				44100C4319CAD95B008B50FD /* UIKit.framework in Frameworks */,
+				44100C4219CAD95B008B50FD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		44100C1B19CAD95B008B50FD = {
+			isa = PBXGroup;
+			children = (
+				44100C2D19CAD95B008B50FD /* ChartDemo */,
+				44100C4619CAD95B008B50FD /* ChartDemoTests */,
+				44100C2619CAD95B008B50FD /* Frameworks */,
+				44100C2519CAD95B008B50FD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		44100C2519CAD95B008B50FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				44100C2419CAD95B008B50FD /* ChartDemo.app */,
+				44100C3F19CAD95B008B50FD /* ChartDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		44100C2619CAD95B008B50FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44100C2719CAD95B008B50FD /* Foundation.framework */,
+				44100C2919CAD95B008B50FD /* CoreGraphics.framework */,
+				44100C2B19CAD95B008B50FD /* UIKit.framework */,
+				44100C4019CAD95B008B50FD /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		44100C2D19CAD95B008B50FD /* ChartDemo */ = {
+			isa = PBXGroup;
+			children = (
+				44100C5619CAD980008B50FD /* Finance */,
+				44100C3619CAD95B008B50FD /* SPAppDelegate.h */,
+				44100C3719CAD95B008B50FD /* SPAppDelegate.m */,
+				44100C3919CAD95B008B50FD /* Images.xcassets */,
+				44100C2E19CAD95B008B50FD /* Supporting Files */,
+			);
+			path = ChartDemo;
+			sourceTree = "<group>";
+		};
+		44100C2E19CAD95B008B50FD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				44100C2F19CAD95B008B50FD /* ChartDemo-Info.plist */,
+				44100C3019CAD95B008B50FD /* InfoPlist.strings */,
+				44100C3319CAD95B008B50FD /* main.m */,
+				44100C3519CAD95B008B50FD /* ChartDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		44100C4619CAD95B008B50FD /* ChartDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				44100C4C19CAD95B008B50FD /* ChartDemoTests.m */,
+				44100C4719CAD95B008B50FD /* Supporting Files */,
+			);
+			path = ChartDemoTests;
+			sourceTree = "<group>";
+		};
+		44100C4719CAD95B008B50FD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				44100C4819CAD95B008B50FD /* ChartDemoTests-Info.plist */,
+				44100C4919CAD95B008B50FD /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		44100C5619CAD980008B50FD /* Finance */ = {
+			isa = PBXGroup;
+			children = (
+				44100C5719CAD99B008B50FD /* FinanceDemoViewController.h */,
+				44100C5819CAD99B008B50FD /* FinanceDemoViewController.m */,
+				44100C5919CAD99B008B50FD /* FinanceDemoViewController.xib */,
+				44100C5A19CAD99B008B50FD /* FinanceTableViewController.h */,
+				44100C5B19CAD99B008B50FD /* FinanceTableViewController.m */,
+				44100C5C19CAD99B008B50FD /* FinanceTableViewController.xib */,
+				44100C7419CADAC9008B50FD /* Helper */,
+				44100C6319CAD9F7008B50FD /* PieChartView */,
+				44100C6219CAD9E9008B50FD /* BezierLineChartView */,
+			);
+			name = Finance;
+			sourceTree = "<group>";
+		};
+		44100C6219CAD9E9008B50FD /* BezierLineChartView */ = {
+			isa = PBXGroup;
+			children = (
+				44100C6419CADA03008B50FD /* BezierLineChartView.h */,
+				44100C6519CADA03008B50FD /* BezierLineChartView.m */,
+				44100C6619CADA03008B50FD /* lineModel.h */,
+				44100C6719CADA03008B50FD /* lineModel.m */,
+			);
+			path = BezierLineChartView;
+			sourceTree = "<group>";
+		};
+		44100C6319CAD9F7008B50FD /* PieChartView */ = {
+			isa = PBXGroup;
+			children = (
+				44100C6A19CADA1C008B50FD /* PieChartView.h */,
+				44100C6B19CADA1C008B50FD /* PieChartView.m */,
+				44100C6D19CADA36008B50FD /* NJDNumberJump */,
+			);
+			path = PieChartView;
+			sourceTree = "<group>";
+		};
+		44100C6D19CADA36008B50FD /* NJDNumberJump */ = {
+			isa = PBXGroup;
+			children = (
+				44100C6E19CADA3B008B50FD /* NumberJumpTextLayer.h */,
+				44100C6F19CADA3B008B50FD /* NumberJumpTextLayer.m */,
+				44100C7019CADA3B008B50FD /* NJDBezierCurve.h */,
+				44100C7119CADA3B008B50FD /* NJDBezierCurve.m */,
+			);
+			path = NJDNumberJump;
+			sourceTree = "<group>";
+		};
+		44100C7419CADAC9008B50FD /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				44100C7519CADACF008B50FD /* NSArray+Safe.h */,
+				44100C7619CADACF008B50FD /* NSArray+Safe.m */,
+				44100C7819CADAE4008B50FD /* ColorTool.h */,
+				44100C7919CADAE4008B50FD /* ColorTool.m */,
+				44100C7B19CADAF8008B50FD /* UIView-ViewFrameGeometry.h */,
+				44100C7C19CADAF8008B50FD /* UIView-ViewFrameGeometry.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		44100C2319CAD95B008B50FD /* ChartDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44100C5019CAD95B008B50FD /* Build configuration list for PBXNativeTarget "ChartDemo" */;
+			buildPhases = (
+				44100C2019CAD95B008B50FD /* Sources */,
+				44100C2119CAD95B008B50FD /* Frameworks */,
+				44100C2219CAD95B008B50FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChartDemo;
+			productName = ChartDemo;
+			productReference = 44100C2419CAD95B008B50FD /* ChartDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		44100C3E19CAD95B008B50FD /* ChartDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44100C5319CAD95B008B50FD /* Build configuration list for PBXNativeTarget "ChartDemoTests" */;
+			buildPhases = (
+				44100C3B19CAD95B008B50FD /* Sources */,
+				44100C3C19CAD95B008B50FD /* Frameworks */,
+				44100C3D19CAD95B008B50FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				44100C4519CAD95B008B50FD /* PBXTargetDependency */,
+			);
+			name = ChartDemoTests;
+			productName = ChartDemoTests;
+			productReference = 44100C3F19CAD95B008B50FD /* ChartDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		44100C1C19CAD95B008B50FD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SP;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Finance;
+				TargetAttributes = {
+					44100C3E19CAD95B008B50FD = {
+						TestTargetID = 44100C2319CAD95B008B50FD;
+					};
+				};
+			};
+			buildConfigurationList = 44100C1F19CAD95B008B50FD /* Build configuration list for PBXProject "ChartDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 44100C1B19CAD95B008B50FD;
+			productRefGroup = 44100C2519CAD95B008B50FD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				44100C2319CAD95B008B50FD /* ChartDemo */,
+				44100C3E19CAD95B008B50FD /* ChartDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		44100C2219CAD95B008B50FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44100C3219CAD95B008B50FD /* InfoPlist.strings in Resources */,
+				44100C3A19CAD95B008B50FD /* Images.xcassets in Resources */,
+				44100C6019CAD99B008B50FD /* FinanceTableViewController.xib in Resources */,
+				44100C5E19CAD99B008B50FD /* FinanceDemoViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44100C3D19CAD95B008B50FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44100C4B19CAD95B008B50FD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		44100C2019CAD95B008B50FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44100C3419CAD95B008B50FD /* main.m in Sources */,
+				44100C7D19CADAF8008B50FD /* UIView-ViewFrameGeometry.m in Sources */,
+				44100C7719CADACF008B50FD /* NSArray+Safe.m in Sources */,
+				44100C6919CADA03008B50FD /* lineModel.m in Sources */,
+				44100C3819CAD95B008B50FD /* SPAppDelegate.m in Sources */,
+				44100C5F19CAD99B008B50FD /* FinanceTableViewController.m in Sources */,
+				44100C6819CADA03008B50FD /* BezierLineChartView.m in Sources */,
+				44100C6C19CADA1C008B50FD /* PieChartView.m in Sources */,
+				44100C5D19CAD99B008B50FD /* FinanceDemoViewController.m in Sources */,
+				44100C7A19CADAE4008B50FD /* ColorTool.m in Sources */,
+				44100C7219CADA3B008B50FD /* NumberJumpTextLayer.m in Sources */,
+				44100C7319CADA3B008B50FD /* NJDBezierCurve.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44100C3B19CAD95B008B50FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44100C4D19CAD95B008B50FD /* ChartDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		44100C4519CAD95B008B50FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44100C2319CAD95B008B50FD /* ChartDemo */;
+			targetProxy = 44100C4419CAD95B008B50FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		44100C3019CAD95B008B50FD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				44100C3119CAD95B008B50FD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		44100C4919CAD95B008B50FD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				44100C4A19CAD95B008B50FD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		44100C4E19CAD95B008B50FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		44100C4F19CAD95B008B50FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		44100C5119CAD95B008B50FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChartDemo/ChartDemo-Prefix.pch";
+				INFOPLIST_FILE = "ChartDemo/ChartDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		44100C5219CAD95B008B50FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChartDemo/ChartDemo-Prefix.pch";
+				INFOPLIST_FILE = "ChartDemo/ChartDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		44100C5419CAD95B008B50FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ChartDemo.app/ChartDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChartDemo/ChartDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ChartDemoTests/ChartDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		44100C5519CAD95B008B50FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ChartDemo.app/ChartDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChartDemo/ChartDemo-Prefix.pch";
+				INFOPLIST_FILE = "ChartDemoTests/ChartDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		44100C1F19CAD95B008B50FD /* Build configuration list for PBXProject "ChartDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44100C4E19CAD95B008B50FD /* Debug */,
+				44100C4F19CAD95B008B50FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44100C5019CAD95B008B50FD /* Build configuration list for PBXNativeTarget "ChartDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44100C5119CAD95B008B50FD /* Debug */,
+				44100C5219CAD95B008B50FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		44100C5319CAD95B008B50FD /* Build configuration list for PBXNativeTarget "ChartDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44100C5419CAD95B008B50FD /* Debug */,
+				44100C5519CAD95B008B50FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 44100C1C19CAD95B008B50FD /* Project object */;
+}
