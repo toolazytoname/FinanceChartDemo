@@ -58,26 +58,36 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationController.navigationBarHidden = YES;
-    NSURL *url = [NSURL URLWithString:@"http://platform.sina.com.cn/client/Forecast?app_key=4135432745&code=sz000001"];
+
+    [self loadWithUrl:@"http://platform.sina.com.cn/client/Forecast?app_key=4135432745&code=sz000001"];
+}
+
+-(IBAction)loadAnother:(id)sender
+{
+    [self loadWithUrl:@"http://platform.sina.com.cn/client/Forecast?app_key=4135432745&code=sz000002"];
+
+}
+
+-(void)loadWithUrl:(NSString *)urlString
+{    NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     NSError *urlError;
     NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&urlError];
     NSError *parseError;
     NSDictionary *returnDataDic = [NSJSONSerialization JSONObjectWithData:returnData options:NSJSONReadingAllowFragments error:&parseError];
-    
-    
-    
-    
-    //返回数据
     NSDictionary *dataDic = [[returnDataDic objectForKeyNotNull:@"result"] objectForKeyNotNull:@"data"];
+    [self loadData:dataDic];
+
+}
+
+-(void)loadData:(NSDictionary *)dataDic
+{
     NSArray *ForecastArray = [dataDic objectForKeyNotNull:@"Forecast"];
     NSDictionary *GainProbDic = [dataDic objectForKeyNotNull:@"GainProb"];
     [self addLabelSubviews:GainProbDic];
     [self addPieChart:GainProbDic];
     [self addLineChart:ForecastArray];
 }
-
-
 
 -(void)addLabelSubviews:(NSDictionary *)GainProbDic
 {
@@ -266,26 +276,6 @@
         
         
     }
-    
-//    // line 1 预测股价
-//    NSArray *plot1YValues = @[@"12.10", @"12.50", @"12.40",@"13.00", @"12.30", @"12.90",@"13.20"];
-//    NSMutableArray *pointArray = [NSMutableArray array];
-//    for (int i = 0; i < self.lineChartView.xAxisValues.count; i++) {
-//        CGPoint point = CGPointMake([[self.lineChartView.xAxisValues objectAtIndex:i] floatValue], [[plot1YValues objectAtIndex:i] floatValue]);
-//        [pointArray addObject:[NSValue valueWithCGPoint:point]];
-//    }
-    
-    
-    
-//    //line 2 现实股价
-//    NSArray *plot2YValues = @[@"12.20", @"12.40", @"12.50",@"12.90", @"12.30", @"12.00",@"13.00"];
-//    NSMutableArray *point2Array = [NSMutableArray array];
-//    for (int i = 0; i < self.lineChartView.xAxisValues.count; i++) {
-//        CGPoint point = CGPointMake([[self.lineChartView.xAxisValues objectAtIndex:i] floatValue], [[plot2YValues objectAtIndex:i] floatValue]);
-//        [point2Array addObject:[NSValue valueWithCGPoint:point]];
-//    }
-    
-    
     
     yAxisValues  = [self getYAxisValuesByRelatedArray:yAxisRelatedValuesArray];
     

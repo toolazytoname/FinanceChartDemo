@@ -9,6 +9,7 @@
 #import "PieChartView.h"
 #import "ColorTool.h"
 #import "NumberJumpTextLayer.h"
+#import "NSArray+Safe.h"
 
 @interface PieChartView()
 @property(nonatomic, retain)CAShapeLayer* shapeLayer;
@@ -46,6 +47,10 @@
 
 -(void)strokeChartWithstrokeColors:(NSArray *)strokeColorsArray lineWidth:(CGFloat)lineWidth endAngles:(NSArray *)endAnglesArray labelCountText:(CGFloat)labelcount
 {
+    [self clearAllSubLayers];
+    [self clearAllSubViews];
+    
+    [self setNeedsDisplay];
     for (int i = 0; i < strokeColorsArray.count; i++) {
         CGColorRef strokeColor = [[strokeColorsArray objectAtIndex:i] CGColor];
         CGFloat endAngle = [[endAnglesArray objectAtIndex:i] floatValue];
@@ -158,5 +163,20 @@
 }
 
 
+-(void)clearAllSubLayers
+{
+    for (int i = 0 ; i < self.layer.sublayers.count; i++) {
+        CALayer *subLayer = [self.layer.sublayers safeObjectAtIndex:i];
+        [subLayer removeFromSuperlayer];
+    }
+}
+
+-(void)clearAllSubViews
+{
+    for (int i = 0 ; i < self.subviews.count; i++) {
+        UIView *subView = [self.subviews safeObjectAtIndex:i];
+        [subView removeFromSuperview];
+    }
+}
 
 @end

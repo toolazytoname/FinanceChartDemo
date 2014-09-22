@@ -146,6 +146,8 @@
 
 -(void)draw
 {
+    [self clearAllSubLayers];
+    [self clearAllSubViews];
     [self commonInit];
     [self drawYAxis];
     [self drawXAxis];
@@ -490,5 +492,19 @@
     return xCalculatorValue;
 }
 
+-(void)clearAllSubLayers
+{
+    for (int i = 0 ; i < self.layer.sublayers.count; i++) {
+        CALayer *subLayer = [self.layer.sublayers safeObjectAtIndex:i];
+        [subLayer removeFromSuperlayer];
+    }
+}
+-(void)clearAllSubViews
+{
+    for (int i = 0 ; i < self.subviews.count; i++) {
+        UIView *subView = [self.subviews safeObjectAtIndex:i];
+        [subView removeFromSuperview];
+    }
+}
 
 @end
