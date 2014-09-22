@@ -110,13 +110,21 @@
     }
     
     if (self.xAxisValues.count > 0) {
-        self.xIntervalValue = self.xAxisLength / ([self.xAxisValues.lastObject floatValue] - [self.xAxisValues.firstObject floatValue]);
+//        self.xIntervalValue = self.xAxisLength / ([self.xAxisValues.lastObject floatValue] - [self.xAxisValues.firstObject floatValue]);
+        self.xIntervalValue = self.xAxisLength / 6;
     }
     self.yFormatterString = @"%.2f";
     self.xFormatterString = @"%.2f";
     self.xAxisFontSize = 7.5;
     
     self.xAxisLabelFrameY = 160.0;
+    
+    
+    self.maintitle = @"历史预测对比曲线";
+    self.maintitleRect = CGRectMake(28.0, 15, 100, 11);
+    self.orignalPoint = CGPointMake(48.0f, 135.0f);
+    self.xAxisLength = 249.0f;
+    self.yAxisLength = 85.0f;
 }
 
 
@@ -180,7 +188,7 @@
     CAShapeLayer *xAxisLayer = [self xChartLineWithfillColor:[[UIColor clearColor] CGColor] strokeColor:[[ColorTool colorWithRGB:@"#f0f0f0"] CGColor] lineWidth:0.5];
     [self addsubLayer:xAxisLayer animated:NO];
     for (int i = 0; i < self.xAxisValues.count ; i++) {
-        CGFloat originalXValue = [self getXCalulatorByValue:[[self.xAxisValues objectAtIndex:i] floatValue]];
+        CGFloat originalXValue = [self getXCalulatorByValue:[[self.xAxisValues objectAtIndex:i] floatValue] index:i];
         NSNumber* xAxisVlue = [self.xAxisValues objectAtIndex:i];
         NSString* numberString = [NSString stringWithFormat:self.xFormatterString, xAxisVlue.floatValue];
         UILabel *yAxisLabel = [[UILabel alloc] initWithFrame:CGRectMake(originalXValue - self.xAxisFontSize/2,self.xAxisLabelFrameY , 20, 6)];
@@ -210,7 +218,7 @@
         lineModel *lineModel = [self.lineArray safeObjectAtIndex:i];
         for (int pointIndex = 1; pointIndex < lineModel.valuePoints.count; pointIndex++) {
             CGPoint currentValuePoint =  [[lineModel.valuePoints safeObjectAtIndex:pointIndex] CGPointValue];
-            CGPoint currentPoint = CGPointMake([self getXCalulatorByValue:currentValuePoint.x], [self getYCalulatorByValue:currentValuePoint.y]);
+            CGPoint currentPoint = CGPointMake([self getXCalulatorByValue:currentValuePoint.x index:pointIndex], [self getYCalulatorByValue:currentValuePoint.y]);
             CAShapeLayer *circleLayer = [self circleWithfillColor:[[UIColor whiteColor] CGColor]  strokeColor:[lineModel.pointColor CGColor] lineWidth:1.0 point:currentPoint];
             [self addsubLayer:circleLayer animated:YES];
         }
@@ -362,8 +370,8 @@
         CGPoint currentValuePoint =  [[pointArray safeObjectAtIndex:pointIndex] CGPointValue];
         CGPoint nextValuePoint =  [[pointArray safeObjectAtIndex:pointIndex + 1] CGPointValue];
         
-        CGPoint currentPoint = CGPointMake([self getXCalulatorByValue:currentValuePoint.x], [self getYCalulatorByValue:currentValuePoint.y]);
-        CGPoint nextPoint = CGPointMake([self getXCalulatorByValue:nextValuePoint.x], [self getYCalulatorByValue:nextValuePoint.y]);
+        CGPoint currentPoint = CGPointMake([self getXCalulatorByValue:currentValuePoint.x index:pointIndex], [self getYCalulatorByValue:currentValuePoint.y]);
+        CGPoint nextPoint = CGPointMake([self getXCalulatorByValue:nextValuePoint.x index:pointIndex+1], [self getYCalulatorByValue:nextValuePoint.y]);
         
         [path moveToPoint:currentPoint];
         [path addLineToPoint:nextPoint];
@@ -475,9 +483,10 @@
     return YCalculatorValue;
 }
 
--(CGFloat)getXCalulatorByValue:(CGFloat)XValue
+-(CGFloat)getXCalulatorByValue:(CGFloat)XValue index:(int)index
 {
-    CGFloat xCalculatorValue = self.orignalPoint.x + (XValue - [[self.xAxisValues firstObject] floatValue])* self.xIntervalValue;
+//    CGFloat xCalculatorValue = self.orignalPoint.x + (XValue - [[self.xAxisValues firstObject] floatValue])* self.xIntervalValue;
+    CGFloat xCalculatorValue = self.orignalPoint.x + index * self.xIntervalValue;
     return xCalculatorValue;
 }
 

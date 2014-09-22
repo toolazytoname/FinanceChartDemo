@@ -31,6 +31,7 @@
 		44100C7719CADACF008B50FD /* NSArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 44100C7619CADACF008B50FD /* NSArray+Safe.m */; };
 		44100C7A19CADAE4008B50FD /* ColorTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 44100C7919CADAE4008B50FD /* ColorTool.m */; };
 		44100C7D19CADAF8008B50FD /* UIView-ViewFrameGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 44100C7C19CADAF8008B50FD /* UIView-ViewFrameGeometry.m */; };
+		44C8A32519CFF520005ECFE1 /* NSDictionary+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C8A32419CFF520005ECFE1 /* NSDictionary+Safe.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		44100C7919CADAE4008B50FD /* ColorTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorTool.m; sourceTree = "<group>"; };
 		44100C7B19CADAF8008B50FD /* UIView-ViewFrameGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView-ViewFrameGeometry.h"; sourceTree = "<group>"; };
 		44100C7C19CADAF8008B50FD /* UIView-ViewFrameGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView-ViewFrameGeometry.m"; sourceTree = "<group>"; };
+		44C8A32319CFF520005ECFE1 /* NSDictionary+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Safe.h"; sourceTree = "<group>"; };
+		44C8A32419CFF520005ECFE1 /* NSDictionary+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Safe.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +233,8 @@
 		44100C7419CADAC9008B50FD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				44C8A32319CFF520005ECFE1 /* NSDictionary+Safe.h */,
+				44C8A32419CFF520005ECFE1 /* NSDictionary+Safe.m */,
 				44100C7519CADACF008B50FD /* NSArray+Safe.h */,
 				44100C7619CADACF008B50FD /* NSArray+Safe.m */,
 				44100C7819CADAE4008B50FD /* ColorTool.h */,
@@ -341,6 +346,7 @@
 				44100C3419CAD95B008B50FD /* main.m in Sources */,
 				44100C7D19CADAF8008B50FD /* UIView-ViewFrameGeometry.m in Sources */,
 				44100C7719CADACF008B50FD /* NSArray+Safe.m in Sources */,
+				44C8A32519CFF520005ECFE1 /* NSDictionary+Safe.m in Sources */,
 				44100C6919CADA03008B50FD /* lineModel.m in Sources */,
 				44100C3819CAD95B008B50FD /* SPAppDelegate.m in Sources */,
 				44100C5F19CAD99B008B50FD /* FinanceTableViewController.m in Sources */,
@@ -546,6 +552,7 @@
 				44100C5219CAD95B008B50FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		44100C5319CAD95B008B50FD /* Build configuration list for PBXNativeTarget "ChartDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -554,6 +561,7 @@
 				44100C5519CAD95B008B50FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
