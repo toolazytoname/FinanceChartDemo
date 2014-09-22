@@ -293,9 +293,9 @@
     self.lineChartView.xAxisValues = xAxisValues;
     //y 轴的值
     self.lineChartView.yAxisValues = yAxisValues;
-    lineModel *plot1 = [[lineModel alloc] initWith:nextClosePricePointsArry lineColor:[ColorTool colorWithRGB:@"#0b7dd5"] pointColor:[ColorTool colorWithRGB:@"#0b7dd5"] width:1 title:@"预测股价" titleFrame:CGRectMake(166.0f,15.0f, 50.0f, 11.0f)];
+    lineModel *plot1 = [[lineModel alloc] initWith:highPricePointsArray lineColor:[ColorTool colorWithRGB:@"#0b7dd5"] pointColor:[ColorTool colorWithRGB:@"#0b7dd5"] width:1 title:@"预测股价" titleFrame:CGRectMake(166.0f,15.0f, 50.0f, 11.0f)];
     [self.lineChartView addLine:plot1];
-    lineModel *plot2 = [[lineModel alloc] initWith:highPricePointsArray lineColor:[ColorTool colorWithRGB:@"#c9c9c9"] pointColor:[ColorTool colorWithRGB:@"#c9c9c9"] width:1 title:@"实际股价" titleFrame:CGRectMake(250.0f,15.0f,50.0f, 11.0f)] ;
+    lineModel *plot2 = [[lineModel alloc] initWith:nextClosePricePointsArry lineColor:[ColorTool colorWithRGB:@"#c9c9c9"] pointColor:[ColorTool colorWithRGB:@"#c9c9c9"] width:1 title:@"实际股价" titleFrame:CGRectMake(250.0f,15.0f,50.0f, 11.0f)] ;
     [self.lineChartView addLine:plot2];
     [self.lineChartView draw];
 }
