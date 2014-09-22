@@ -36,7 +36,7 @@ Point2D endPoint;
 - (void)cleanUpValue {
     _lastTime = 0;
     _indexNumber = 0;
-    self.string = [[NSString stringWithFormat:@"%.0f",_startNumber] stringByAppendingString:@"%"];
+    self.string = [[NSString stringWithFormat:@"%.1f",_startNumber] stringByAppendingString:@"%"];
 }
 
 - (void)jumpNumberWithDuration:(int)duration
@@ -88,7 +88,7 @@ Point2D endPoint;
 
 - (void)changeNumberBySelector {
     if (_indexNumber >= kPointsNumber) {
-        self.string = [[NSString stringWithFormat:@"%.0f",_endNumber] stringByAppendingString:@"%"];
+        self.string = [[NSString stringWithFormat:@"%.1f",_endNumber] stringByAppendingString:@"%"];
         return;
     } else {
         NSArray *pointValues = [self.numberPoints objectAtIndex:_indexNumber];
@@ -97,7 +97,7 @@ Point2D endPoint;
         float currentTime = [(NSNumber *)[pointValues objectAtIndex:0] floatValue];
         float timeDuration = currentTime - _lastTime;
         _lastTime = currentTime;
-        self.string = [[NSString stringWithFormat:@"%.0f",value] stringByAppendingString:@"%"];
+        self.string = [[NSString stringWithFormat:@"%.1f",value] stringByAppendingString:@"%"];
         [self performSelector:@selector(changeNumberBySelector) withObject:nil afterDelay:timeDuration];
     }
 }

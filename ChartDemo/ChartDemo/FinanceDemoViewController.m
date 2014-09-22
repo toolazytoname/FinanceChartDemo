@@ -83,6 +83,7 @@
 {
     self.topLeftLabel.font = [UIFont systemFontOfSize:11.5];
     self.topLeftLabel.textColor = [ColorTool colorWithRGB:@"#666666"];
+    self.topLeftLabel.text = [NSString stringWithFormat:@"%@ 胜算量化分析",[GainProbDic objectForKeyNotNull:@"frcEndDate"]];
     
     //预测
     NSString *highPriceString = [self getStringWithString:[GainProbDic objectForKeyNotNull:@"highPrice"]];
@@ -162,6 +163,8 @@
     NSNumber *LastClosePriceNumber = [self getNumberWithString:[GainProbDic objectForKeyNotNull:@"LastClosePrice"]];
     //预测
     NSNumber *highPriceNumber = [self getNumberWithString:[GainProbDic objectForKeyNotNull:@"highPrice"]];
+    //最优仓位
+    NSNumber *positionNumber = [self getNumberWithString:[GainProbDic objectForKeyNotNull:@"position"]];
     float maxValue = MAX(LastClosePriceNumber.floatValue, highPriceNumber.floatValue);
     float minValue = MIN(LastClosePriceNumber.floatValue, highPriceNumber.floatValue);
     float amountValue = minValue/maxValue;
@@ -173,13 +176,11 @@
         [self.middlePieChartView strokeChartWithstrokeColors:strokeColorsArray2 lineWidth:11.0 endAngles:endAnglesArray2 labelCountText:[frcVolatilityNumber floatValue]];
     }
     
-    //最优仓位
-    NSNumber *positionNumber = [self getNumberWithString:[GainProbDic objectForKeyNotNull:@"position"]];
     if(positionNumber && positionNumber.floatValue > 0 )
     {
         NSArray *strokeColorsArray3 = [NSArray arrayWithObjects:[ColorTool colorWithRGB:@"#ff9000"],nil];
-        NSArray *endAnglesArray3 = [NSArray arrayWithObjects:@0.3, nil];
-        [self.rightPieChartView strokeChartWithstrokeColors:strokeColorsArray3 lineWidth:11.0 endAngles:endAnglesArray3 labelCountText:0.3];
+        NSArray *endAnglesArray3 = [NSArray arrayWithObjects:positionNumber, nil];
+        [self.rightPieChartView strokeChartWithstrokeColors:strokeColorsArray3 lineWidth:11.0 endAngles:endAnglesArray3 labelCountText:positionNumber.floatValue];
         
     }
 }
