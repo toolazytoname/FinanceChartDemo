@@ -57,14 +57,29 @@
 -(void)draw;
 
 /**
+ *  清除线对象
+ *
+ */
+-(void)clearLines;
+
+/**
  *  增加线对象
  *
  *  @param newLineModel 线对象
  */
 - (void)addLine:(lineModel *)newLineModel;
 
-
+/**
+ *  开始动画
+ *
+ */
 - (void)startAnimation;
 
+
+/**
+ *  清除当前View 的子layer
+ *
+ */
+-(void)clearAllSubElements;
 
 @end

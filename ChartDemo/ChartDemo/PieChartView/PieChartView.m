@@ -47,8 +47,7 @@
 
 -(void)strokeChartWithstrokeColors:(NSArray *)strokeColorsArray lineWidth:(CGFloat)lineWidth endAngles:(NSArray *)endAnglesArray labelCountText:(CGFloat)labelcount
 {
-    [self clearAllSubLayers];
-    [self clearAllSubViews];
+    [self clearAllSubElements];
     
     [self setNeedsDisplay];
     for (int i = 0; i < strokeColorsArray.count; i++) {
@@ -163,19 +162,16 @@
 }
 
 
--(void)clearAllSubLayers
+-(void)clearAllSubElements
 {
-    for (int i = 0 ; i < self.layer.sublayers.count; i++) {
-        CALayer *subLayer = [self.layer.sublayers safeObjectAtIndex:i];
-        [subLayer removeFromSuperlayer];
-    }
+    [self clearAllSubLayers];
 }
 
--(void)clearAllSubViews
+-(void)clearAllSubLayers
 {
-    for (int i = 0 ; i < self.subviews.count; i++) {
-        UIView *subView = [self.subviews safeObjectAtIndex:i];
-        [subView removeFromSuperview];
+    NSArray *subLayers = [self.layer.sublayers copy];
+    for (CALayer *subLayer in subLayers) {
+        [subLayer removeFromSuperlayer];
     }
 }
 

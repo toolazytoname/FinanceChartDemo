@@ -19,7 +19,17 @@
  */
 -(void)strokeChartWithstrokeColors:(NSArray *)strokeColorsArray lineWidth:(CGFloat)lineWidth endAngles:(NSArray *)endAnglesArray labelCountText:(CGFloat)labelcount;
 
-
+/**
+ *  开始动画
+ *
+ */
 - (void)startAnimation;
+
+/**
+ *  清除当前页面的子layer
+ *
+ */
+- (void)clearAllSubElements;
+
 
 @end

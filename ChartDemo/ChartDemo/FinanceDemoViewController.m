@@ -67,6 +67,19 @@
     [self loadWithUrl:@"http://platform.sina.com.cn/client/Forecast?app_key=4135432745&code=sz000002"];
 
 }
+-(IBAction)clear:(id)sender
+{
+    [self.leftPieChartView clearAllSubElements];
+    [self.lineChartView clearAllSubElements];
+}
+-(IBAction)startAnimation:(id)sender
+{
+    [self.leftPieChartView startAnimation];
+    [self.middlePieChartView startAnimation];
+    [self.rightPieChartView startAnimation];
+    
+    [self.lineChartView startAnimation];
+}
 
 -(void)loadWithUrl:(NSString *)urlString
 {    NSURL *url = [NSURL URLWithString:urlString];
@@ -80,6 +93,7 @@
 
 }
 
+//加载数据
 -(void)loadData:(NSDictionary *)dataDic
 {
     NSArray *ForecastArray = [dataDic objectForKeyNotNull:@"Forecast"];
@@ -139,21 +153,20 @@
 
 }
 
-//GainProb: 【上面-图形数据】
-//
-//{
-//    ·         nextClosePrice: "-",[实际收盘价]
-//    ·         frcEndDate: "2014-09-17",[预测日期]
-//    ·         highPrice: "10.333",[预测价格]
-//    ·         frcGainProb: "0.428350",[上涨概率]
-//    ·         position: "0.5",[最佳仓位]
-//    ·         frcVolatility: "0.008129"【预计涨幅】
-//              LastClosePrice: ""【昨收价】
-
-//}
 -(void)addPieChart:(NSDictionary *)GainProbDic
 {
+    //GainProb: 【上面-图形数据】
+    //
+    //{
+    //    ·         nextClosePrice: "-",[实际收盘价]
+    //    ·         frcEndDate: "2014-09-17",[预测日期]
+    //    ·         highPrice: "10.333",[预测价格]
+    //    ·         frcGainProb: "0.428350",[上涨概率]
+    //    ·         position: "0.5",[最佳仓位]
+    //    ·         frcVolatility: "0.008129"【预计涨幅】
+    //              LastClosePrice: ""【昨收价】
     
+    //}
     if (!GainProbDic || ![GainProbDic isKindOfClass:[NSDictionary class]]) {
         NSLog(@"传入参数 GainProbDic数据有误");
         return;
@@ -194,33 +207,11 @@
         
     }
 }
-
-
-
-//Forecast: [下面-7日预测对比曲线]
-//
-//[
-// ·
-//{
-//    ·         nextClosePrice: "-",[实际收盘价]
-//    ·         frcEndDate: "2014-08-27",[预测日期]
-//    ·         highPrice: "10.300",[预测价格]
-//    ·         frcGainProb: "0.402450",
-//    ·         position: "0.5",
-//    ·         frcVolatility: "0.010797"
-//},
-// ·
-//{
-//    ·         nextClosePrice: "-",
-//    ·         frcEndDate: "2014-09-17",
-//    ·         highPrice: "10.333",
-//    ·         frcGainProb: "0.428350",
-//    ·         position: "0.5",
-//    ·         frcVolatility: "0.008129"
-//}
-// ],
 -(void)addLineChart:(NSArray *)ForecastArray
 {
+    //    ·         nextClosePrice: "-",[实际收盘价]
+    //    ·         frcEndDate: "2014-08-27",[预测日期]
+    //    ·         highPrice: "10.300",[预测价格]
     
     if (!ForecastArray || ![ForecastArray isKindOfClass:[NSArray class]] || ForecastArray.count == 0) {
         NSLog(@"传入参数 ForecastArray数据有误");
@@ -284,19 +275,12 @@
     //y 轴的值
     self.lineChartView.yAxisValues = yAxisValues;
     lineModel *plot1 = [[lineModel alloc] initWith:highPricePointsArray lineColor:[ColorTool colorWithRGB:@"#0b7dd5"] pointColor:[ColorTool colorWithRGB:@"#0b7dd5"] width:1 title:@"预测股价" titleFrame:CGRectMake(166.0f,15.0f, 50.0f, 11.0f)];
-    [self.lineChartView addLine:plot1];
+
     lineModel *plot2 = [[lineModel alloc] initWith:nextClosePricePointsArry lineColor:[ColorTool colorWithRGB:@"#c9c9c9"] pointColor:[ColorTool colorWithRGB:@"#c9c9c9"] width:1 title:@"实际股价" titleFrame:CGRectMake(250.0f,15.0f,50.0f, 11.0f)] ;
+    [self.lineChartView.lineArray removeAllObjects];
+    [self.lineChartView addLine:plot1];
     [self.lineChartView addLine:plot2];
     [self.lineChartView draw];
-}
-
--(IBAction)startAnimation:(id)sender
-{
-    [self.leftPieChartView startAnimation];
-    [self.middlePieChartView startAnimation];
-    [self.rightPieChartView startAnimation];
-    
-    [self.lineChartView startAnimation];
 }
 - (void)didReceiveMemoryWarning
 {
@@ -305,6 +289,8 @@
 }
 
 
+
+#pragma mark - current page tool Method
 -(NSNumber *)getNumberWithString:(NSString *)valueString
 {
     if (!valueString || valueString.length == 0 || ![valueString floatValue] > 0) {

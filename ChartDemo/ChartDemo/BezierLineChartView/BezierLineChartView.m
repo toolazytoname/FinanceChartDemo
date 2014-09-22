@@ -127,6 +127,10 @@
     self.yAxisLength = 85.0f;
 }
 
+-(void)clearLines
+{
+    [self.lineArray removeAllObjects];
+}
 
 - (void)addLine:(lineModel *)newLineModel
 {
@@ -146,8 +150,7 @@
 
 -(void)draw
 {
-    [self clearAllSubLayers];
-    [self clearAllSubViews];
+    [self clearAllSubElements];
     [self commonInit];
     [self drawYAxis];
     [self drawXAxis];
@@ -492,18 +495,16 @@
     return xCalculatorValue;
 }
 
+-(void)clearAllSubElements
+{
+    [self clearAllSubLayers];
+}
+
 -(void)clearAllSubLayers
 {
-    for (int i = 0 ; i < self.layer.sublayers.count; i++) {
-        CALayer *subLayer = [self.layer.sublayers safeObjectAtIndex:i];
+    NSArray *subLayers = [self.layer.sublayers copy];
+    for (CALayer *subLayer in subLayers) {
         [subLayer removeFromSuperlayer];
-    }
-}
--(void)clearAllSubViews
-{
-    for (int i = 0 ; i < self.subviews.count; i++) {
-        UIView *subView = [self.subviews safeObjectAtIndex:i];
-        [subView removeFromSuperview];
     }
 }
 

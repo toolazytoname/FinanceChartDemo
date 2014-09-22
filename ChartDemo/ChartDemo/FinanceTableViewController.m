@@ -28,6 +28,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    UITableView *table = [[UITableView alloc] init];
+    [table reloadData];
     
 }
 
