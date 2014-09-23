@@ -169,10 +169,11 @@
 
 -(void)clearAllSubLayers
 {
-    NSArray *subLayers = [self.layer.sublayers copy];
-    for (CALayer *subLayer in subLayers) {
-        [subLayer removeFromSuperlayer];
-    }
+    self.layer.sublayers = nil;
+//    NSArray *subLayers = [self.layer.sublayers copy];
+//    for (CALayer *subLayer in subLayers) {
+//        [subLayer removeFromSuperlayer];
+//    }
 }
 
 @end
