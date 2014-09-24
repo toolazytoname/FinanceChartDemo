@@ -59,7 +59,10 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationController.navigationBarHidden = YES;
 
-    [self loadWithUrl:@"http://platform.sina.com.cn/client/Forecast?app_key=4135432745&code=sz000001"];
+//    [self loadWithUrl:@"http://platform.sina.com.cn/client/Forecast?app_key=4135432745&code=sh600316"];
+    [self loadWithUrl:@"http://platform.sina.com.cn/client/Forecast?app_key=4135432745&code=sz300397"];//有问题的
+
+//    [self loadWithUrl:@"http://platform.sina.com.cn/client/Forecast?app_key=4135432745&code=sz000001"];
 }
 
 -(IBAction)loadAnother:(id)sender
@@ -109,6 +112,8 @@
     self.topLeftLabel.textColor = [ColorTool colorWithRGB:@"#666666"];
     self.topLeftLabel.text = [NSString stringWithFormat:@"%@ 胜算量化分析",[GainProbDic objectForKeyNotNull:@"frcEndDate"]];
     
+    //昨收
+    NSString *LastClosePriceString = [self getStringWithString:[GainProbDic objectForKeyNotNull:@"LastClosePrice"]];
     //预测
     NSString *highPriceString = [self getStringWithString:[GainProbDic objectForKeyNotNull:@"highPrice"]];
 
@@ -122,10 +127,14 @@
     self.leftPieTopLabel.font = [UIFont systemFontOfSize:8.5];
     self.leftPieTopLabel.textColor = [ColorTool colorWithRGB:@"#a3a3a3"];
     
+    
+
+    LastClosePriceString = [NSString stringWithFormat:@"[%@]",LastClosePriceString];
+    highPriceString = [NSString stringWithFormat:@"[%@]",highPriceString];
     NSMutableAttributedString *middlePieTopStringAtti = [[NSMutableAttributedString alloc] initWithString:@"昨收" attributes:[NSDictionary dictionaryWithObjectsAndKeys:[ColorTool colorWithRGB:@"#a3a3a3"],NSForegroundColorAttributeName, nil]];
-    [middlePieTopStringAtti appendAttributedString: [[NSAttributedString alloc] initWithString:@"[6.15]" attributes:[NSDictionary dictionaryWithObjectsAndKeys:[ColorTool colorWithRGB:@"#0b7dd5"],NSForegroundColorAttributeName, nil]]];
+    [middlePieTopStringAtti appendAttributedString: [[NSAttributedString alloc] initWithString:LastClosePriceString attributes:[NSDictionary dictionaryWithObjectsAndKeys:[ColorTool colorWithRGB:@"#0b7dd5"],NSForegroundColorAttributeName, nil]]];
     [middlePieTopStringAtti appendAttributedString: [[NSMutableAttributedString alloc] initWithString:@"预测" attributes:[NSDictionary dictionaryWithObjectsAndKeys:[ColorTool colorWithRGB:@"#a3a3a3"],NSForegroundColorAttributeName, nil]]];
-    [middlePieTopStringAtti appendAttributedString:[[NSMutableAttributedString alloc] initWithString:@"[6.25]" attributes:[NSDictionary dictionaryWithObjectsAndKeys:[ColorTool colorWithRGB:@"#0b7dd5"],NSForegroundColorAttributeName, nil]]];
+    [middlePieTopStringAtti appendAttributedString:[[NSMutableAttributedString alloc] initWithString:highPriceString attributes:[NSDictionary dictionaryWithObjectsAndKeys:[ColorTool colorWithRGB:@"#0b7dd5"],NSForegroundColorAttributeName, nil]]];
     self.middlePieTopLabel.attributedText = middlePieTopStringAtti;
     
     self.rightPieTopLabel.font = [UIFont systemFontOfSize:8.5];
@@ -244,8 +253,8 @@
         if (frcEndDateString && frcEndDateString.length > 0) {
             [xAxisValues addObject:frcEndDateString];
             
-            //增加y值数组
-            [yAxisRelatedValuesArray addObject:closePriceString];
+//            //增加y值数组
+//            [yAxisRelatedValuesArray addObject:closePriceString];
 
         }
         //实际收盘价点
@@ -304,7 +313,7 @@
 -(NSString *)getStringWithString:(NSString *)valueString
 {
     if (!valueString || valueString.length == 0 || ![valueString floatValue] > 0) {
-        return nil;
+        return @"";
     }
     NSString *resultString = [NSString stringWithFormat:@"%0.2f",[valueString floatValue]];
     return resultString;
@@ -328,6 +337,9 @@
 
 -(NSMutableArray *)getYAxisValuesByRelatedArray:(NSArray *)valueArrays
 {
+    if (!valueArrays || valueArrays.count == 0) {
+        return nil;
+    }
     NSMutableArray *yAxisValues = [NSMutableArray array];
 //    valueArrays
     [valueArrays sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
@@ -344,7 +356,7 @@
     //建议是拿最高值和最低值各自乘以个+-10%，这样不至于最小值紧贴X轴
     maxValue = maxValue*(1 + 0.1);
     minValue = minValue*(1 - 0.1);
-    float stepValue = (maxValue - minValue)/4;
+    float stepValue = (maxValue - minValue)/3;
     for (int i = 0; i <= 3; i++) {
         NSString *stepValueString = [NSString stringWithFormat:@"%0.2f",minValue + i*stepValue];
         [yAxisValues addObject:stepValueString];

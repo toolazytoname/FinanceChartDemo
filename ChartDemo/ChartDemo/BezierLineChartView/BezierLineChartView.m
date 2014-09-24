@@ -175,8 +175,8 @@
     CAShapeLayer *yAxisLayer = [self yChartLineWithfillColor:[[UIColor clearColor] CGColor] strokeColor:[[ColorTool colorWithRGB:@"#f0f0f0"] CGColor] lineWidth:0.5];
     [self addsubLayer:yAxisLayer animated:NO];
     for (int i = 0; i < self.yAxisValues.count ; i++) {
-        CGFloat originalYValue = [self getYCalulatorByValue:[[self.yAxisValues objectAtIndex:i] floatValue]];
-        NSNumber* yAxisVlue = [self.yAxisValues objectAtIndex:i];
+        CGFloat originalYValue = [self getYCalulatorByValue:[[self.yAxisValues safeObjectAtIndex:i] floatValue]];
+        NSNumber* yAxisVlue = [self.yAxisValues safeObjectAtIndex:i];
         NSString* numberString = [NSString stringWithFormat:self.yFormatterString, yAxisVlue.floatValue];
         UILabel *yAxisLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.yAxisLabelFrameX, originalYValue- self.yAxisFontSize/2, 20, 6)];
         yAxisLabel.text = numberString;
@@ -193,8 +193,8 @@
     CAShapeLayer *xAxisLayer = [self xChartLineWithfillColor:[[UIColor clearColor] CGColor] strokeColor:[[ColorTool colorWithRGB:@"#f0f0f0"] CGColor] lineWidth:0.5];
     [self addsubLayer:xAxisLayer animated:NO];
     for (int i = 0; i < self.xAxisValues.count ; i++) {
-        CGFloat originalXValue = [self getXCalulatorByValue:[[self.xAxisValues objectAtIndex:i] floatValue] index:i];
-        NSNumber* xAxisVlue = [self.xAxisValues objectAtIndex:i];
+        CGFloat originalXValue = [self getXCalulatorByValue:[[self.xAxisValues safeObjectAtIndex:i] floatValue] index:i];
+        NSNumber* xAxisVlue = [self.xAxisValues safeObjectAtIndex:i];
         NSString* numberString = [NSString stringWithFormat:self.xFormatterString, xAxisVlue.floatValue];
         UILabel *yAxisLabel = [[UILabel alloc] initWithFrame:CGRectMake(originalXValue - self.xAxisFontSize/2,self.xAxisLabelFrameY , 20, 6)];
         yAxisLabel.text = numberString;
